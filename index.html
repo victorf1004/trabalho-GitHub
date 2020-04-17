@@ -4,15 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Started</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        li{
+            list-style-type: none;
+        }
+    </style>
 </head>
 <body>
-    <div id="conteudo">
+    <div id="conteudo" style="text-align: center;">
+        <p>Adicione um produto a lista</p>
+        <input type="text" id="citacao">
+        <button class="btn btn-primary" id="btn">Adicionar</button>
         <h2>Lisa de compras</h2>
         <ul id="lista">
             <li>Bananas<li>
             <li>Abacates</li>
+            <li>Abacaxis</li>
         </ul>
-
     </div>
+    <script>
+        var btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function(){
+            var citacao = document.getElementById("citacao");
+            var li = document.createElement("LI");
+            li.innerText = citacao.value;
+            var lista = document.getElementById("lista");
+            lista.appendChild(li);
+            citacao.value = "";
+            citacao.focus();
+        });
+    </script>
 </body>
 </html>
